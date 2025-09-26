@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+/* Custom scroll snap styles */
+.snap-container {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+.snap-item {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+/* Quality selector styles */
+.quality-selector {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+}
+
+.quality-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.quality-button {
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.quality-button:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.quality-options {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: rgba(0, 0, 0, 0.9);
+  min-width: 100px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.quality-option {
+  color: white;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.quality-option:last-child {
+  border-bottom: none;
+}
+
+.quality-option:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.quality-option.active {
+  background: rgba(255, 255, 255, 0.2);
+  font-weight: bold;
+}
+
+.quality-option.active::after {
+  content: " ✓";
+  color: #4CAF50;
+}
+@utility scrollbar-hide {
+  /* Firefox */
+  scrollbar-width: none;
+
+  /* Safari and Chrome */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility scrollbar-default {
+  /* Firefox */
+  scrollbar-width: auto;
+
+  /* Safari and Chrome */
+  &::-webkit-scrollbar {
+    display: block;
+  }
+}
